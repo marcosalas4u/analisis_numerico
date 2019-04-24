@@ -1,4 +1,5 @@
 from os import system
+import numpy as np
 
 def _simple_bool_ans(str_chain):
     option = None
@@ -23,12 +24,7 @@ def read_num(str_chain):
     return num
 
 def read_ecu_sys(num_ecuations):
-    ec_sys = []
-
-    for ecuation in range(num_ecuations):
-        ec_sys.append([])
-        for coef in  range(num_ecuations + 1):
-            ec_sys[ecuation].append(0)
+    ec_sys = np.zeros([num_ecuations, num_ecuations + 1])
     
     for ecuation in range(num_ecuations):
         print('\n\nIngresa los coeficientes de tu ecuación {}:\n'.format(ecuation + 1))

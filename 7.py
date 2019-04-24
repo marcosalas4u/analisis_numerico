@@ -21,11 +21,7 @@ def read_num(str_chain):
     return num
 
 def read_n_points(n):
-    table = [[], []]
-
-    for i in range(2):
-        for j in  range(n):
-            table[i].append(0)
+    table = np.zeros([n,2])
     
     for point in range(n):
         print('\n\nPunto {}:\n'.format(point + 1))
@@ -60,7 +56,6 @@ def lagrange_interpolation():
         system('pause')
 
         plt.scatter(np.array(table_points[0]), np.array(table_points[1]), color = 'blue', marker = 'o', s = 30)
-            
         plt.scatter(x_interpolation, result, label = 'Interpolación', color = 'red', marker = 'o', s = 30)
         plt.xlabel('x')
         plt.ylabel('f(x)')
